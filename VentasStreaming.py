@@ -81,7 +81,7 @@ async def logUserBot():
                         j += 1
                         try:
                             # Intentar enviar el mensaje completo (texto y multimedia)
-                            await client.send_message(i["group_id"], message_spam)
+                            await client.forward_messages(i["group_id"], message_spam)
                             await client.send_message("@VentasStreamingSpam", f'<b>Mensaje enviado a {i["group_id"]}</b> - <code>{i["group_name"]}</code>', parse_mode="HTML")
                         except Exception as error:
                             if "CHAT_SEND_PHOTOS_FORBIDDEN" in str(error):
